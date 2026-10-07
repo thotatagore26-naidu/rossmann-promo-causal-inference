@@ -2,16 +2,14 @@
 ### A causal inference case study using Difference-in-Differences
 
 ## Overview
-Businesses often assume that a sales increase after a promotion means the promotion worked — but
-sales might have risen anyway due to seasonality or general demand trends. This project uses
-**Difference-in-Differences (DiD)**, a standard causal inference method, to separate the true
-causal effect of a promotion from background trends, using real retail data.
+
+I wanted to understand whether a sales increase after a promotion could really be attributed to the promotion. Using Rossmann store data, I compared stores that joined Promo2 with stores that did not, and applied **Difference-in-Differences (DiD)** to estimate the change beyond the background trend.
+
+This project helped me explore the difference between predicting sales and estimating the effect of a business decision. The notebook includes checks of pre-promotion trends and a placebo test, while keeping the assumptions and limitations visible.
 
 ## Key finding
-A naive before/after comparison suggested the promotion increased sales by ~227 units/week.
-After properly accounting for the background trend using a control group, the true causal effect
-was **not statistically significant** (DiD estimate ≈ −63, p = 0.84) — the naive comparison was
-misleading. A placebo test (fake treatment date) confirms the method is not just picking up noise.
+
+The simple before-and-after comparison showed an increase of about 227 in the aggregated sales measure. The DiD estimate was approximately **−63 (p = 0.84)**, so this analysis did not find statistically significant evidence of a promotion effect for the selected cohort. That does not prove the promotion had no effect; it shows why the comparison group and uncertainty matter.
 
 ## Dataset
 [Rossmann Store Sales](https://www.kaggle.com/competitions/rossmann-store-sales/data) — 1,115
@@ -54,4 +52,4 @@ jupyter notebook analysis.ipynb
   estimate further
 
 ## Author
-[Your name] — Data Science, Deggendorf Institute of Technology
+Tagore Thotakura — Data Science, Deggendorf Institute of Technology
